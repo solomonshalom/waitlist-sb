@@ -1,53 +1,50 @@
 const storageKey = 'theme-preference'
 
 const onClick = () => {
-  // flip current value
-  theme.value = theme.value === 'light'
-    ? 'light'
-    : 'dark'
-
+  // Always set to light mode on toggle
+  theme.value = 'light'
   setPreference()
 }
 
 const getColorPreference = () => {
-  if (localStorage.getItem(storageKey))
-    return localStorage.getItem(storageKey)
-  else
-    return window.matchMedia('(prefers-color-scheme: light)').matches
-      ? 'light'
-      : 'dark'
+  // Always return light regardless of storage or system preference
+  return 'light'
 }
 
 const setPreference = () => {
-  localStorage.setItem(storageKey, theme.value)
+  localStorage.setItem(storageKey, 'light')
   reflectPreference()
 }
 
 const reflectPreference = () => {
   document.firstElementChild
-    .setAttribute('data-new-ui-theme', theme.value)
+    .setAttribute('data-new-ui-theme', 'light')
 
   document
     .querySelector('#theme-toggle')
-    ?.setAttribute('aria-label', theme.value)
+    ?.setAttribute('aria-label', 'light')
 }
 
 const theme = {
-  value: getColorPreference(),
+  value: 'light',
 }
 
 reflectPreference()
 
 window.onload = () => {
   reflectPreference()
+  
+  // Optional: You can keep the toggle button functionality
+  // but it will only toggle between light and light (effectively doing nothing)
   document
     .querySelector('#theme-toggle')
-    .addEventListener('click', onClick)
+    ?.addEventListener('click', onClick)
 }
 
+// Override system preference changes to always stay in light mode
 window
   .matchMedia('(prefers-color-scheme: light)')
-  .addEventListener('change', ({matches:isDark}) => {
-    theme.value = isDark ? 'light' : 'dark'
+  .addEventListener('change', () => {
+    theme.value = 'light'
     setPreference()
   })
