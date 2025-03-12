@@ -410,10 +410,10 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 0.06em;
     text-underline-offset: 0.1em;
-    color: var(--link);
+    text-decoration-color: #f2930d;
 
-    &:hover { color: var(--link-hover); }
-    &:visited { color: var(--link-visited); }
+    &:hover { color: #f2930d }
+    &:visited { color: #f2930d }
 }
 
 b,
@@ -453,6 +453,80 @@ p, h1, h2, h3, h4, h5, h6, li, pre, code, strong, dl, dt {
 
 a, a * {
     cursor: var(--f-cursor-pointer);
+}
+
+form {
+    margin-bottom: var(--spacing-13);
+    position: relative;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none
+}
+
+form aside {
+    display: flex;
+    position: relative
+}
+
+form aside fieldset {
+    display: flex;
+    left: 0;
+    position: absolute;
+    padding: var(--spacing-00);
+    width: 100%;
+}
+
+input {
+    background-color: var(--background);
+    border: 1px solid var(--border-muted);
+    border-radius: var(--spacing-03);
+    width: calc(var(--spacing-17) * 3);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: var(--text-primary);
+    flex: 1;
+    padding: var(--spacing-03) var(--spacing-05);
+}
+
+input ::placeholder {
+    color: var(--text-placeholder)
+}
+
+input:hover {
+    border-color: var(--border)
+}
+
+input:focus {
+    border-color: var(--border);
+    outline: 1px solid var(--order-focus);
+    outline-offset: 0
+}
+
+.button {
+    background: var(--button);
+    border-radius: var(--spacing-02);
+    font-family: system-ui, sans-serif;
+    color: var(--text-on-color);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 600;
+    padding: 0.25em 1.3em;
+    text-decoration: none;
+    white-space: nowrap;
+    align-items: center;
+    position: inherit;
+    top: var(--spacing-02);
+    right: var(--spacing-02);
+    height: 32px;
+}
+
+.button:hover {
+    background: var(--button-hover)
+}
+
+.button:active {
+    background: var(--button-active)
 }
 
 @media (max-width: 50rem) {
