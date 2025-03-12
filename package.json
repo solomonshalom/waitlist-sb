@@ -2,7 +2,7 @@
   "name": "waitlist-capernaum",
   "description": "Capernaum - AI-powered collective of tools for political and legal analysis that transforms complex data into decisive insights, elevating your decision-making from reactive to strategic.",
   "scripts": {
-    "build": "tsup rhyver.ts --format esm --target es2022 --outDir cli && vite build && cp -r cli/* dist/ || echo 'No output'",
+    "build": "vitte build",
     "dev": "vite",
     "preview": "vite preview"
   },
