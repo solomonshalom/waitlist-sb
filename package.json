@@ -2,7 +2,7 @@
   "name": "waitlist-capernaum",
   "description": "Capernaum - AI-powered collective of tools for political and legal analysis that transforms complex data into decisive insights, elevating your decision-making from reactive to strategic.",
   "scripts": {
-    "build": "vitte build",
+    "build": "vite build",
     "dev": "vite",
     "preview": "vite preview"
   },
