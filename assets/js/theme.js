@@ -3,8 +3,8 @@ const storageKey = 'theme-preference'
 const onClick = () => {
   // flip current value
   theme.value = theme.value === 'light'
-    ? 'dark'
-    : 'light'
+    ? 'light'
+    : 'dark'
 
   setPreference()
 }
@@ -46,8 +46,8 @@ window.onload = () => {
 }
 
 window
-  .matchMedia('(prefers-color-scheme: dark)')
+  .matchMedia('(prefers-color-scheme: light)')
   .addEventListener('change', ({matches:isDark}) => {
-    theme.value = isDark ? 'dark' : 'light'
+    theme.value = isDark ? 'light' : 'dark'
     setPreference()
   })
