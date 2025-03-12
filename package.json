@@ -1,41 +1,23 @@
 {
-  "name": "rhyver",
-  "version": "2.08.1",
-  "rhyver": "v2.25Q1.08.1",
-  "description": "RhyVer combines version tracking with calendar dates (year, quarter, week) to help teams maintain regular release schedules and align software updates with business planning cycles.",
-  "type": "module",
-  "moduleResolution": "node",
-  "main": "cli/rhyver.js",
-  "bin": {
-    "rhyver": "./dist/ryhver.js"
-  },
+  "name": "waitlist-capernaum",
+  "description": "Capernaum - AI-powered collective of tools for political and legal analysis that transforms complex data into decisive insights, elevating your decision-making from reactive to strategic.",
   "scripts": {
-    "build:cli": "tsup rhyver.ts --format esm --target es2022 --outDir cli",
-    "dev:cli": "tsx rhyver.ts",
-    "start:cli": "node cli/rhyver.js",
     "build": "tsup rhyver.ts --format esm --target es2022 --outDir cli && vite build && cp -r cli/* dist/ || echo 'No output'",
     "dev": "vite",
     "preview": "vite preview"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/planetabhi/rhyver.git"
+    "url": "git+https://github.com/solomonshalom/waitlist.justice.rest"
   },
-  "homepage": "https://rhyver.com/",
+  "homepage": "https://waitlist.justice.rest",
   "engines": {
     "node": ">=14.0.0"
   },
-  "keywords": [
-    "versioning",
-    "system",
-    "rhythm",
-    "rhyver"
-  ],
-  "author": "@planetabhi",
+  "author": "@justicerest",
   "license": "MIT",
   "files": [
-    "rhyver.md",
-    "cli/"
+    "rhyver.md"
   ],
   "devDependencies": {
     "@new-ui/colors": "^1.3.0",
