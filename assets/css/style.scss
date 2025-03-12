@@ -237,7 +237,16 @@ p, li {
     color: var(--text-secondary);
 }
 
-span, strong {
+span {
+    font-weight: 500;
+    font-family: var(--code);
+    color: var(--text-primary);
+    text-decoration: underline dotted var(--border);
+    text-underline-offset: var(--spacing-02);
+    text-decoration-color: #f2930d;
+}
+
+strong {
     font-weight: 500;
     font-family: var(--code);
     color: var(--text-primary);
@@ -410,10 +419,10 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 0.06em;
     text-underline-offset: 0.1em;
-    text-decoration-color: #f2930d;
+    text-decoration-color: var(--link);
 
-    &:hover { color: #f2930d }
-    &:visited { color: #f2930d }
+    &:hover { color: var(--link) }
+    &:visited { color: var(--link) }
 }
 
 b,
@@ -425,6 +434,11 @@ strong {
 i,
 em {
     font-style: italic;
+}
+
+::selection {
+    background-color: #f2930d;
+    color: #464139;
 }
 
 dl {
