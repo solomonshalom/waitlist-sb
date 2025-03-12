@@ -97,7 +97,7 @@ body {
 body,
 p,
 li {
-    font-size: var(--desktop-body);
+    font-size: var(--desktop-body-xl);
     line-height: var(--lh-desktop-body);
     @include mobile-typography;
 }
@@ -442,7 +442,7 @@ em {
 
 dl {
     font-feature-settings: 'case';
-    font-size: var(--desktop-body);
+    font-size: var(--desktop-body-xl);
     line-height: var(--lh-desktop-body);
     margin: var(--spacing-06) var(--spacing-00);
 
