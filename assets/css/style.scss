@@ -241,17 +241,12 @@ span {
     font-weight: 500;
     font-family: var(--code);
     color: var(--text-primary);
-    text-decoration: underline dotted var(--border);
-    text-underline-offset: var(--spacing-02);
-    text-decoration-color: #f2930d;
 }
 
 strong {
     font-weight: 500;
     font-family: var(--code);
     color: var(--text-primary);
-    text-decoration: underline dotted var(--border);
-    text-underline-offset: var(--spacing-02);
 }
 
 %list-base {
@@ -623,11 +618,7 @@ input:focus {
 
 @layer debug {
   main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
+    display: block;
 
     h1 {
       letter-spacing: -0.05rem;
@@ -676,20 +667,9 @@ input:focus {
     filter: blur(4px);
   }
 
-  @media (max-width: 768px) {
-    .keypad {
-      order: 1;
-    }
-    section {
-      order: 2;
-    }
-  }
 
-  section,
-  section > div {
-    width: 50ch;
-    max-width: calc(100vw - 2rem);
-  }
+
+
 }
 
 @layer demo {
@@ -749,12 +729,12 @@ input:focus {
       top: 5%;
       left: 0;
       mix-blend-mode: normal;
-      /* mix-blend-mode: overlay soft-light; */
       color: hsl(0 0% 94%);
       translate: 8% 10%;
       transform: rotateX(36deg) rotateY(45deg) rotateX(-90deg) rotate(0deg);
       text-align: left;
       padding: 1ch;
+      text-decoration: none;
     }
 
     .keypad__single {
