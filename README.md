@@ -1,6 +1,5 @@
 # Waitlist
 
-
 ## Installing
 
 ```bash
