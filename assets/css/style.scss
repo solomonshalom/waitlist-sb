@@ -558,6 +558,10 @@ input:focus {
     right: 0px;
     height: 32px;
     border-color: var(--button);
+    
+    @media (max-width: 600px) {
+        padding: 0.25em 7em;
+    }
 }
 
 .button:hover {
