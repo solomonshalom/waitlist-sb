@@ -468,12 +468,20 @@ form {
     position: relative;
     user-select: none;
     -ms-user-select: none;
-    -webkit-user-select: none
+    -webkit-user-select: none;
+    
+    @media (max-width: 600px) {
+        margin-bottom: var(--spacing-07);
+    }
 }
 
 form aside {
     display: flex;
-    position: relative
+    position: relative;
+    
+    @media (max-width: 600px) {
+        position: static;
+    }
 }
 
 form aside fieldset {
@@ -482,6 +490,23 @@ form aside fieldset {
     position: absolute;
     padding: var(--spacing-00);
     width: 100%;
+    
+    @media (max-width: 600px) {
+        position: static;
+        flex-direction: column;
+        gap: var(--spacing-03);
+        
+        input {
+            margin-bottom: var(--spacing-03);
+        }
+        
+        .button {
+            align-self: flex-start;
+            position: static;
+            width: auto;
+            margin: 0;
+        }
+    }
 }
 
 input {
@@ -495,6 +520,11 @@ input {
     color: var(--text-primary);
     flex: 1;
     padding: var(--spacing-03) var(--spacing-05);
+    
+    @media (max-width: 600px) {
+        width: 100%;
+        max-width: calc(100vw - 4rem);
+    }
 }
 
 input ::placeholder {
