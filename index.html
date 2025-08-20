@@ -148,7 +148,16 @@
         });
         
         if (response.ok) {
+          // Show thank you message in the current form
           form.innerHTML = "<p><strong>thank you :)</strong></p>";
+          
+          // If this is the founders form, also hide the creators form
+          if (form.id === 'founders-form') {
+            const creatorsForm = document.getElementById('creators-form');
+            if (creatorsForm) {
+              creatorsForm.style.display = 'none';
+            }
+          }
         } else {
           form.innerHTML = "<p>oops, try again later :(</p>";
         }
