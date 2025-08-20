@@ -107,7 +107,7 @@
 </p>
 
 <!-- Founders Form -->
-<form id="founders-form" class="waitlist-form" action="https://formspree.io/f/xzzvlkyo" method="POST">
+<form id="founders-form" class="waitlist-form" action="https://www.formbackend.com/f/aa77b88f2edc0666" method="POST">
   <aside>
     <fieldset>
       <input type="email" class="text-input" autocomplete="email" placeholder="founder? sign up here" name="email" required>
@@ -117,7 +117,7 @@
 </form>
 
 <!-- Creators Form -->
-<form id="creators-form" class="waitlist-form" action="https://openformstack.com/f/cmein2vpf0000a6ne6vg90cuz" method="POST">
+<form id="creators-form" class="waitlist-form" action="https://www.formbackend.com/f/aa77b88f2edc0666" method="POST">
   <aside>
     <fieldset>
       <input type="email" class="text-input" autocomplete="email" placeholder="creator? sign up here" name="email" required>
@@ -151,11 +151,16 @@
           // Show thank you message in the current form
           form.innerHTML = "<p><strong>thank you :)</strong></p>";
           
-          // If this is the founders form, also hide the creators form
+          // Hide the other form based on which one was submitted
           if (form.id === 'founders-form') {
             const creatorsForm = document.getElementById('creators-form');
             if (creatorsForm) {
               creatorsForm.style.display = 'none';
+            }
+          } else if (form.id === 'creators-form') {
+            const foundersForm = document.getElementById('founders-form');
+            if (foundersForm) {
+              foundersForm.style.display = 'none';
             }
           }
         } else {
