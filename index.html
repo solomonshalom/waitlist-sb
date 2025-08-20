@@ -97,14 +97,14 @@
         </figure>
 		<!-- EV's signature size is [at] W: 90 & H: 40 && Slijo's signature is [at] W:  -->
         <dl>
-            <dt>Love!</dt>
-            <dd>Sam Kim</dd>
+            <dt>love!</dt>
+            <dd>sam kim</dd>
             <dd><a href="mailto:hello@zerobase.ca">hello@zerobase.ca</a></dd>
         </dl>
         <br />
-        <p role="complementary" aria-label="P.S.">
-            <strong>P.S.</strong> Join our waiting list to fly w/ us!
-        </p>
+<p role="complementary" aria-label="P.S.">
+    <strong>P.S.</strong> join <span id="waitlist-count">100</span> as you fly w/ us!
+</p>
 
         <form name="subscribe-form" target="_self" aria-label="Subscribe"  action="https://formspree.io/f/movearwb"
   method="POST">
@@ -127,6 +127,24 @@
 </section>
 </main>
 <script type="module" src="/assets/js/script.js"></script>
-</body>
+<script>
+  const counter = document.getElementById("waitlist-count");
+  let count = 100; 
 
+  function updateCount() {
+    // Random step: -3, -2, -1, +1, +2, +3
+    const step = Math.floor(Math.random() * 7) - 3; 
+    count += step;
+
+    // Keep count between 100 and 200
+    if (count < 100) count = 100;
+    if (count > 200) count = 200;
+
+    counter.textContent = count;
+  }
+
+  // Update every 2–4 seconds
+  setInterval(updateCount, Math.floor(Math.random() * 2000) + 2000);
+</script>
+</body>
 </html>
