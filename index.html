@@ -106,22 +106,25 @@
     <strong>P.S.</strong> join <span id="waitlist-count">100</span> founders & creators as you fly w/ us!
 </p>
 
-        <form action="https://openformstack.com/f/cmein2vpf0000a6ne6vg90cuz" method="POST">
-            <aside>
-                <fieldset>
-                    <input type="email" class="text-input" autocomplete="email" placeholder="founder? sign up here" name="EMAIL" tabindex="0">
-                    <button class="button" type="submit" name="subscribe" tabindex="-1"> &#8594; </button>
-                </fieldset>
-            </aside>
-        </form>
-                <form action="https://openformstack.com/f/cmein2vpf0000a6ne6vg90cuz" method="POST">
-            <aside>
-                <fieldset>
-                    <input type="email" class="text-input" autocomplete="email" placeholder="creator? sign up here" name="EMAIL" tabindex="0">
-                    <button class="button" type="submit" name="subscribe" tabindex="-1"> &#8594; </button>
-                </fieldset>
-            </aside>
-        </form>
+<form name="subscribe-form-founder" target="_self" aria-label="Subscribe"  
+  action="https://openformstack.com/f/cmein2vpf0000a6ne6vg90cuz" method="POST">
+  <aside>
+    <fieldset>
+      <input type="email" class="text-input" autocomplete="email" placeholder="founder? sign up here" name="email" tabindex="0" required>
+      <button class="button" type="submit" name="subscribe" tabindex="-1">&#8594;</button>
+    </fieldset>
+  </aside>
+</form>
+
+<form name="subscribe-form-creator" target="_self" aria-label="Subscribe"  
+  action="https://openformstack.com/f/cmein2vpf0000a6ne6vg90cuz" method="POST">
+  <aside>
+    <fieldset>
+      <input type="email" class="text-input" autocomplete="email" placeholder="creator? sign up here" name="email" tabindex="0" required>
+      <button class="button" type="submit" name="subscribe" tabindex="-1">&#8594;</button>
+    </fieldset>
+  </aside>
+</form>
 </section>
 </main>
 <script type="module" src="/assets/js/script.js"></script>
