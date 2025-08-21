@@ -172,24 +172,49 @@
     });
   });
 
-  // Waitlist counter animation
+  // Waitlist counter animation - more realistic version
   const counter = document.getElementById("waitlist-count");
   let count = 100; 
 
   function updateCount() {
-    // Random step: -3, -2, -1, +1, +2, +3
-    const step = Math.floor(Math.random() * 7) - 3; 
+    // More realistic signup patterns:
+    // 70% chance of +1 signup
+    // 20% chance of +2 signups (small burst)
+    // 8% chance of +3 signups (moderate interest)
+    // 2% chance of +5 signups (viral moment)
+    
+    const random = Math.random();
+    let step;
+    
+    if (random < 0.70) {
+      step = 1;  // Single signup
+    } else if (random < 0.90) {
+      step = 2;  // Small burst
+    } else if (random < 0.98) {
+      step = 3;  // Moderate interest
+    } else {
+      step = 5;  // Viral moment
+    }
+    
     count += step;
-
-    // Keep count between 100 and 200
-    if (count < 100) count = 100;
-    if (count > 200) count = 200;
-
+    
+    // Cap at reasonable maximum (e.g., 500)
+    if (count > 500) count = 500;
+    
     counter.textContent = count;
   }
 
-  // Update every 2–4 seconds
-  setInterval(updateCount, Math.floor(Math.random() * 2000) + 2000);
+  // Update every 3–8 seconds for more realistic pacing
+  function scheduleNextUpdate() {
+    const delay = Math.floor(Math.random() * 5000) + 3000; // 3-8 seconds
+    setTimeout(() => {
+      updateCount();
+      scheduleNextUpdate(); // Schedule the next update
+    }, delay);
+  }
+
+  // Start the counter
+  scheduleNextUpdate();
 </script>
 </body>
 </html>
